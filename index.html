@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu Nombre — Economista | Data & BI Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF9F6;
+    --ink:#1B2430;
+    --ink-soft:#5B6470;
+    --accent:#1F6F78;
+    --accent-warm:#C97D32;
+    --line:#E3E0D8;
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:10;
+    background:rgba(250,249,246,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex; justify-content:space-between; align-items:center; height:56px;}
+  nav .brand{font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:0.02em;}
+  nav ul{display:flex; gap:22px; list-style:none;}
+  nav a{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+    text-decoration:none;
+  }
+  nav a:hover{color:var(--accent);}
+
+  /* HERO */
+  header.hero{padding:96px 0 72px;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--accent);
+    margin-bottom:18px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(34px, 6vw, 54px);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    max-width:11ch;
+  }
+  .hero-sub{
+    margin-top:22px;
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-tags{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    padding:5px 10px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    color:var(--ink-soft);
+    background:var(--card);
+  }
+  .hero-links{margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:3px;
+  }
+  .btn-primary{background:var(--ink); color:var(--bg);}
+  .btn-ghost{border:1px solid var(--line); color:var(--ink);}
+
+  /* SECTIONS */
+  section{padding:56px 0; border-top:1px solid var(--line);}
+  .section-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--accent-warm);
+    margin-bottom:14px;
+  }
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:28px;
+    margin-bottom:18px;
+  }
+  p{color:var(--ink-soft); max-width:60ch;}
+  p + p{margin-top:14px;}
+
+  /* PROJECTS */
+  .project{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:24px;
+    margin-bottom:16px;
+  }
+  .project h3{
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:17px;
+    margin-bottom:6px;
+  }
+  .project .meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:10px;
+  }
+  .project p{font-size:15px;}
+  .project .links{margin-top:14px; display:flex; gap:14px;}
+  .project .links a{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--ink);
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+
+  /* SKILLS */
+  .skills-grid{display:flex; flex-wrap:wrap; gap:8px;}
+
+  /* TFM */
+  .tfm-box{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:3px solid var(--accent);
+    border-radius:4px;
+    padding:22px 24px;
+  }
+
+  /* CONTACT */
+  .contact-list{list-style:none; margin-top:8px;}
+  .contact-list li{margin-bottom:8px;}
+  .contact-list a{
+    font-family:'JetBrains Mono', monospace;
+    font-size:14px;
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .contact-list a:hover{border-color:var(--accent); color:var(--accent);}
+
+  footer{
+    padding:32px 0 60px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:560px){
+    nav ul{gap:14px;}
+    header.hero{padding:64px 0 48px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">tu_nombre.cv</div>
+    <ul>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#tfm">TFM</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Madrid, España — Disponible</div>
+    <h1>Tu Nombre Apellido</h1>
+    <p class="hero-sub">
+      Economista con base cuantitativa aplicada a datos y negocio.
+      Construyo análisis que se traducen en decisiones, no solo en dashboards.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">SQL</span>
+      <span class="tag">Power BI</span>
+      <span class="tag">Python</span>
+      <span class="tag">Economía aplicada</span>
+      <span class="tag">Business Intelligence</span>
+    </div>
+    <div class="hero-links">
+      <a class="btn btn-primary" href="mailto:tu@email.com">Escribir</a>
+      <a class="btn btn-ghost" href="CV-tu-nombre.pdf" target="_blank">Descargar CV</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/tu-usuario" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="sobre-mi">
+  <div class="wrap">
+    <div class="section-label">01 — Sobre mí</div>
+    <h2>De la teoría económica a la decisión basada en datos</h2>
+    <p>
+      Graduado en Economía en Perú y Máster en Análisis Económico Aplicado en España.
+      He trabajado en inteligencia de negocio dentro del sector financiero, en operaciones
+      y atención al cliente en retail, y como becario en NTT DATA.
+    </p>
+    <p>
+      Mi interés está en construir análisis que conecten el dato con la pregunta de negocio:
+      no solo "qué pasó", sino "qué deberíamos hacer al respecto". Esa es la perspectiva
+      que un economista aporta frente a un perfil puramente técnico.
+    </p>
+  </div>
+</section>
+
+<section id="proyectos">
+  <div class="wrap">
+    <div class="section-label">02 — Proyectos</div>
+    <h2>Análisis aplicados</h2>
+
+    <div class="project">
+      <h3>Nombre del proyecto 1</h3>
+      <div class="meta">SQL · Power BI</div>
+      <p>
+        Describe en 2-3 líneas qué pregunta respondiste, qué datos usaste (ej. INE, BCRP,
+        Kaggle) y qué decisión o conclusión se desprende del análisis. Sé concreto: números,
+        no adjetivos.
+      </p>
+      <div class="links">
+        <a href="#" target="_blank">Ver dashboard →</a>
+        <a href="#" target="_blank">Repositorio →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Nombre del proyecto 2</h3>
+      <div class="meta">Python · Pandas</div>
+      <p>
+        Mismo formato: qué problema, qué hiciste, qué resultado. Un proyecto pequeño
+        bien explicado vale más que cinco proyectos a medias.
+      </p>
+      <div class="links">
+        <a href="#" target="_blank">Ver notebook →</a>
+        <a href="#" target="_blank">Repositorio →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="tfm">
+  <div class="wrap">
+    <div class="section-label">03 — Trabajo de Fin de Máster</div>
+    <h2>Título de tu TFM</h2>
+    <div class="tfm-box">
+      <p>
+        Resumen ejecutivo en 4-6 líneas: qué pregunta económica abordaste, qué metodología
+        usaste, y cuál fue el hallazgo principal. Escríbelo pensando en un reclutador, no
+        en un tribunal académico — claridad antes que tecnicismo.
+      </p>
+      <div class="links" style="margin-top:16px;">
+        <a href="TFM-tu-nombre.pdf" target="_blank">Descargar documento completo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="habilidades">
+  <div class="wrap">
+    <div class="section-label">04 — Habilidades</div>
+    <h2>Herramientas y métodos</h2>
+    <div class="skills-grid">
+      <span class="tag">SQL</span>
+      <span class="tag">Power BI / DAX</span>
+      <span class="tag">Python (pandas)</span>
+      <span class="tag">Excel avanzado</span>
+      <span class="tag">Econometría aplicada</span>
+      <span class="tag">Análisis de negocio</span>
+      <span class="tag">Git / GitHub</span>
+      <span class="tag">Inglés — nivel X</span>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="section-label">05 — Contacto</div>
+    <h2>Hablemos</h2>
+    <p>Disponible para incorporación en Madrid. Abierto a entrevistas y proyectos.</p>
+    <ul class="contact-list">
+      <li><a href="mailto:tu@email.com">tu@email.com</a></li>
+      <li><a href="https://linkedin.com/in/tu-usuario" target="_blank">linkedin.com/in/tu-usuario</a></li>
+      <li><a href="https://github.com/tu-usuario" target="_blank">github.com/tu-usuario</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Última actualización: junio 2026</div>
+</footer>
+
+</body>
+</html>
